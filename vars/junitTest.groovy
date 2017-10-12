@@ -14,7 +14,7 @@ def call(body) {
 		withMaven(maven: 'maven3'){  // Run the maven build
 			sh "cd ./${targetPath} && mvn test -Dmaven.test.failure.ignore=${ignoreFailure}"  }
 		// Recup des résultats de TU
-		junit '**/target/surefire-reports/TEST-*.xml'
+		// junit '**/target/surefire-reports/TEST-*.xml'
 
 	}
 }
