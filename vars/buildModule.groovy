@@ -14,7 +14,7 @@ def call(body) {
 		// Appel de MAVEN PACKAGE
 		withMaven(maven: 'maven3'){
 			// Run the maven build
-			sh "cd ${targetPath} && mvn -P${buildProfile} -Dmaven.test.skip=true clean package"
+			sh "cd ${targetPath} && mvn -P${buildProfile} -Dmaven.test.skip=true clean install"
 		}
 		
 	}
