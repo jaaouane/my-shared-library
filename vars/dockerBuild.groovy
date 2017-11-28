@@ -9,19 +9,11 @@ def call(body) {
         def pathList = config.path ?: ['./'];
         def imgVersion = config.imgVersion ?: '1.1.0';
 
-	 echo "projectName = ${projectName}";
-	 echo "pathList = ${pathList}";
-	 echo "imgVersion = ${imgVersion}";
 
-	 docker.build("ms-sample/config-server:1.1.0","./config-server")
-	 docker.build("ms-sample/registry:1.1.0","./registry")
-
-
-/*
         for(int i = 0; i < pathList.size(); i++){
 		def targetPath = pathList[i]
                 docker.build("${projectName}/${targetPath}:${imgVersion}","./${targetPath}")
         }
-*/
+
 	
 }
