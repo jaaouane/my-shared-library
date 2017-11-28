@@ -5,9 +5,14 @@ def call(body) {
 	body.delegate = config
 	body()
 
-	def name = config.name ?: "default";
-	def tag = config.tag ?: "1.0";
+        def projectName = config.projectName ?: 'ms-sample';
+        def pathList = config.path ?: ['./'];
+        def imgVersion = config.imgVersion ?: '1.1.0';
 
-	sh "git archive HEAD | docker build -t ${name}:${tag} -"
-    	return docker.image("${name}:${tag}")
+        for(int i = 0; i < pathList.size(); i++){
+		def targetPath = pathList[i]
+                docker.build("${projectName}/${targetPath}:${imgVersion}","./${targetPath}")
+        }
+
+	
 }
