@@ -7,7 +7,7 @@ def call(body) {
 
         def projectName = config.projectName ?: 'ms-sample';
         def pathList = config.path ?: ['./'];
-        def imgVersion = config.imgVersion ?: '1.1.0';
+        def imgVersion = config.imgVersion ?: 'latest';
 
 
         for(int i = 0; i < pathList.size(); i++){
