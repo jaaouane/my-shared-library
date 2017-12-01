@@ -10,7 +10,8 @@ def call(body) {
         def imgVersion = config.imgVersion ?: 'latest';
 
 
-        for(int i = 0; i < pathList.size(); i++){
+        for(int i = 0; i < pathList.size(); i++) {
+                def targetPath = pathList[i]
 		sh "sed -i 's;${projectName}/${targetPath}:.*;${projectName}/${targetPath}:${imgVersion};g' docker-compose.yml";
         }
 
