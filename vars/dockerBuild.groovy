@@ -9,6 +9,8 @@ def call(body) {
         def pathList = config.path ?: ['./'];
         def imgVersion = config.imgVersion ?: 'latest';
 
+	echo "imgVersion = ${imgVersion}" 
+	echo "config.imgVersion = ${config.imgVersion}" 
 
         for(int i = 0; i < pathList.size(); i++){
 		def targetPath = pathList[i]
