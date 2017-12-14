@@ -12,6 +12,14 @@ def call(body) {
 	echo "imgVersion = ${imgVersion}" 
 	echo "config.imgVersion = ${config.imgVersion}" 
 
+
+	echo "pathList = ${pathList}" 
+	echo "config.path = ${config.path}"
+
+	echo "projectName = ${projectName}" 
+	echo "config.projectName = ${config.projectName}"
+
+
         for(int i = 0; i < pathList.size(); i++){
 		def targetPath = pathList[i]
                 docker.build("${projectName}/${targetPath}:${imgVersion}","./${targetPath}")
