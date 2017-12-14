@@ -5,11 +5,11 @@ def call(body) {
 	body.delegate = config
 	body()
 
-	
+	/*
 	echo "config.imgVersion = ${config.imgVersion}" 
 	echo "config.path = ${config.path}"
 	echo "config.projectName = ${config.projectName}"
-
+        */
 
 	def projectName = config.projectName ?: 'ms-sample';
         def pathList = config.path ?: ['./'];
