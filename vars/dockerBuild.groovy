@@ -5,10 +5,6 @@ def call(body) {
 	body.delegate = config
 	body()
 
-        def projectName = config.projectName ?: 'ms-sample';
-        def pathList = config.path ?: ['./'];
-        def imgVersion = config.imgVersion ?: 'latest';
-
 	echo "imgVersion = ${imgVersion}" 
 	echo "config.imgVersion = ${config.imgVersion}" 
 
@@ -18,6 +14,11 @@ def call(body) {
 
 	echo "projectName = ${projectName}" 
 	echo "config.projectName = ${config.projectName}"
+
+	def projectName = config.projectName ?: 'ms-sample';
+        def pathList = config.path ?: ['./'];
+        def imgVersion = config.imgVersion ?: 'latest';
+
 
 
         for(int i = 0; i < pathList.size(); i++){
