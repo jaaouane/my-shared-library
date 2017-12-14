@@ -7,13 +7,9 @@ def call(body) {
 
 	
 	echo "config.imgVersion = ${config.imgVersion}" 
-
-
-	
 	echo "config.path = ${config.path}"
+	echo "config.projectName = ${config.projectName}"
 
-	echo "projectName = ${projectName}" 
-	
 
 	def projectName = config.projectName ?: 'ms-sample';
         def pathList = config.path ?: ['./'];
@@ -21,7 +17,7 @@ def call(body) {
 
         echo "imgVersion = ${imgVersion}" 
         echo "pathList = ${pathList}" 
-        echo "config.projectName = ${config.projectName}"
+        echo "projectName = ${projectName}" 
 
         for(int i = 0; i < pathList.size(); i++){
 		def targetPath = pathList[i]
