@@ -7,8 +7,10 @@ def call(body) {
 
 	
 	echo "config.imgVersion = ${config.imgVersion}" 
-	/*
+	
 	echo "config.path = ${config.path}"
+
+	/*
 	echo "config.projectName = ${config.projectName}"
         */
 
@@ -18,8 +20,9 @@ def call(body) {
 
 	
         echo "imgVersion = ${imgVersion}" 
-	/*
+	
         echo "pathList = ${pathList}" 
+	/*
         echo "projectName = ${projectName}" 
         */
 
