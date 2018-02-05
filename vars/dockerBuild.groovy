@@ -5,8 +5,9 @@ def call(body) {
 	body.delegate = config
 	body()
 
-	/*
+	
 	echo "config.imgVersion = ${config.imgVersion}" 
+	/*
 	echo "config.path = ${config.path}"
 	echo "config.projectName = ${config.projectName}"
         */
@@ -15,8 +16,9 @@ def call(body) {
         def pathList = config.path ?: ['./'];
         def imgVersion = config.imgVersion ?: 'latest';
 
-	/*
+	
         echo "imgVersion = ${imgVersion}" 
+	/*
         echo "pathList = ${pathList}" 
         echo "projectName = ${projectName}" 
         */
