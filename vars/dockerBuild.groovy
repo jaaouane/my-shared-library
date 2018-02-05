@@ -5,6 +5,9 @@ def call(body) {
 	body.delegate = config
 	body()
 
+
+         config.each{ k, v -> println "${k}:${v}" }
+
 	
 	echo "config.imgVersion = ${config.imgVersion}" 
 	
