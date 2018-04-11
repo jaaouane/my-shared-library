@@ -5,34 +5,19 @@ def call(body) {
 	body.delegate = config
 	body()
 
-	echo "debug library"
-        config.each{ k, v -> println "${k}:${v}" }
-
-	
-	echo "config.imgVersion = ${config.imgVersion}" 
-	
-	echo "config.path = ${config.path}"
-
-	/*
-	echo "config.projectName = ${config.projectName}"
-        */
-
 	def projectName = config.projectName ?: 'ms-sample';
         def pathList = config.path ?: ['./'];
         def imgVersion = config.imgVersion ?: 'latest';
-
+        def isLatest = config.isLatest ?: true;
 	
-        echo "imgVersion = ${imgVersion}" 
-	
-        echo "pathList = ${pathList}" 
-	/*
-        echo "projectName = ${projectName}" 
-        */
 
 
         for(int i = 0; i < pathList.size(); i++){
 		def targetPath = pathList[i]
                 docker.build("${projectName}/${targetPath}:${imgVersion}","./${targetPath}")
+                if(isLatest) {
+	           sh "docker tag ${projectName}/${targetPath}:${imgVersion} ${projectName}/${targetPath}:latest"
+	        }
         }
 
 	
