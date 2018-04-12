@@ -10,7 +10,7 @@ def call(body) {
         def extraVars = config.extraVars ;
 	
         wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]) {        
-              ansiblePlaybook installation: 'ansible', inventory: inventoryFile, playbook: playbookFile, extraVars: extraVars
+              ansiblePlaybook installation: 'ansible', inventory: inventoryFile, playbook: playbookFile, colorized:true, extraVars: extraVars
         }
 
 	
