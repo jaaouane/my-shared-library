@@ -17,7 +17,7 @@ def call(body) {
 	    sh "docker tag ${projectName}/${targetPath}:latest ${dockerHubId}/${targetPath}:latest";
 
              docker.withRegistry("https://docker.io/") {
-                docker.image("${registryUserName}/${image}:${tag}").push()
+                docker.image("${dockerHubId}/${image}:${tag}").push()
              }
 	}
 
