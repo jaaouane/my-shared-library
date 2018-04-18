@@ -8,8 +8,6 @@ def call(body) {
         def projectName = config.projectName ?: 'ms-sample';
         def pathList = config.path ?: ['./'];
         def imgVersion = config.imgVersion ?: 'latest';
-       
-        echo "imgVersion dans lib groovy =${imgVersion}"
 
         for(int i = 0; i < pathList.size(); i++) {
                 def targetPath = pathList[i]
